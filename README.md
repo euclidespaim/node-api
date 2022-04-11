@@ -1,7 +1,7 @@
 
 # Node API
 
-Database control API of a library. It has the main HTTP verbs applied using good programming practices.
+Database control API of a library using Express and MongoDB. It has the main HTTP verbs applied and uses good programming practices.
 
 
 ## API Reference
@@ -9,26 +9,57 @@ Database control API of a library. It has the main HTTP verbs applied using good
 #### Get all items
 
 ```http
-  GET /api/items
+  GET /listarLivros
 ```
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
+| ``        | `string` | Show all books             |
 
-#### Get item
+
+#### Get an item by id
 
 ```http
-  GET /api/items/${id}
+  GET /listarLivroPorId/:id
 ```
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `string` | **Required**. Id of item to fetch |
 
-#### add(num1, num2)
 
-Takes two numbers and returns the sum.
+#### Register new items
+
+```http
+  POST /cadastrarLivros
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| ``        | `string` | Add new books              |
+
+
+#### Update item
+
+```http
+  PUT /atualizarLivro/:id
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id of item to fetch |
+
+
+#### Remove an item
+
+```http
+  DELETE /removerLivro/:id
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id of item to fetch |
+
 
 
 ## Badges
@@ -52,9 +83,6 @@ I'm a full stack developer...
 ## Support
 
 For support, email fake@fake.com or join our Slack channel.
-
-
-
 
 
 ## Appendix
